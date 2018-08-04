@@ -1,0 +1,11 @@
+.match-team {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    &__team {
+        grid-column: 1 / 3;
+        font-size: 18px;
+        font-weight: 700;
+        text-align: center;
+    }
+}

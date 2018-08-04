@@ -1,0 +1,6 @@
+.match-score {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: $spacing-medium;
+    grid-column: 1 / 3;
+}

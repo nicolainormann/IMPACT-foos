@@ -1,0 +1,18 @@
+.auth-profile {
+    &__avatar {
+        position: relative;
+        margin-bottom: $spacing-medium;
+        border: 3px solid lighten($alt-color, 10%);
+        padding: 50px;
+    }
+
+    &__display-name {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: $spacing-medium;
+        background-color: $alt-color;
+        color: $alt-text-color;
+        font-size: 24px;
+    }
+}

@@ -1,0 +1,60 @@
+$input-height: 50px;
+
+.input {
+    --border-color: #{lighten($alt-color, 10%)};
+
+    display: block;
+    border: 3px solid var(--border-color);
+    text-align: center;
+    height: $input-height;
+
+    &:invalid {
+        box-shadow: none;
+    }
+
+    option {
+        color: $text-color;
+    }
+}
+
+.button {
+    --background-color: #{lighten($alt-color, 10%)};
+    --text-color: #{$alt-text-color};
+    --padding: 0 #{$spacing-medium};
+    --min-width: 100px;
+
+    padding: var(--padding);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: $input-height;
+    min-width: var(--min-width);
+
+    &:hover {
+        --text-color: #{$primary-color};
+        --background-color: #{lighten($alt-color, 5%)};
+    }
+
+    &_link {
+        --text-color: #{$text-color};
+        --background-color: transparent;
+        --padding: 0;
+        --min-width: auto;
+
+        &:hover {
+            --text-color: #{$text-color};
+            --background-color: transparent;
+
+            text-decoration: underline;
+        }
+    }
+}
+
+select.input {
+    &:invalid {
+        color: rgba($text-color, 0.7);
+    }
+
+    option {
+        color: $text-color;
+    }
+}
