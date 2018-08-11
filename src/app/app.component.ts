@@ -9,7 +9,7 @@ import { takeUntil } from "rxjs/operators";
         <div class="app">
             <foos-header></foos-header>
 
-            <div class="app__container" *ngIf="user && user.displayName | async; else auth">
+            <div class="app__container" *ngIf="user && user!.displayName | async; else auth">
                 <foos-navigation></foos-navigation>
                 <router-outlet></router-outlet>
             </div>

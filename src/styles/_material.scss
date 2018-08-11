@@ -1,0 +1,71 @@
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+$foos-app-typography: mat-typography-config( $font-family: '#{$font}');
+@include angular-material-typography($foos-app-typography);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue.
+$foos-primary: ( 100: lighten($primary-color, 10%),
+500: $primary-color,
+700: darken($primary-color, 10%),
+contrast: ( 100: $text-color,
+500: $text-color,
+700: $text-color,
+));
+$foos-accent: ( 100: lighten($alt-color, 10%),
+500: $alt-color,
+700: darken($alt-color, 10%),
+contrast: ( 100: $alt-text-color,
+500: $alt-text-color,
+700: $alt-text-color,
+));
+$foos-warn: ( 100: lighten($error-color, 10%),
+500: $error-color,
+700: darken($error-color, 10%),
+contrast: ( 100: $alt-text-color,
+500: $alt-text-color,
+700: $alt-text-color,
+));
+$foos-app-primary: mat-palette($foos-primary);
+$foos-app-accent: mat-palette($foos-accent);
+
+// The warn palette is optional (defaults to red).
+$foos-app-warn: mat-palette($foos-warn);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$foos-app-theme: mat-light-theme($foos-app-primary, $foos-app-accent, $foos-app-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($foos-app-theme);
+
+.mat {
+    &_full-width {
+        width: 100% !important;
+    }
+
+    &_spacing-bottom {
+        margin-bottom: $spacing-medium !important;
+    }
+}
+
+.mat-button,
+.mat-icon-button,
+.mat-flat-button,
+.mat-stroked-button,
+.mat-raised-button {
+    @include no-outline;
+    line-height: 50px !important;
+    border-radius: 0 !important;
+
+    .mat-button-wrapper {
+        box-sizing: content-box;
+    }
+}

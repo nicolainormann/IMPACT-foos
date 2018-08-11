@@ -9,3 +9,13 @@ $device-bps: ( 'mobile': (max-width: 567px),
         }
     }
 }
+
+@mixin no-outline() {
+    &:focus {
+        outline: 0;
+    }
+
+    &::-moz-focus-inner {
+        border: 0;
+    }
+}

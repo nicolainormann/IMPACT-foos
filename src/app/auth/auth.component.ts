@@ -4,20 +4,24 @@ import { Translations } from "../../translations/translations";
 @Component({
     selector: "foos-auth",
     template: `
-        <form class="auth" [ngSwitch]="create">
-            <foos-auth-create-user *ngSwitchCase="true"></foos-auth-create-user>
-            <foos-auth-login *ngSwitchCase="false"></foos-auth-login>
+        <form class="auth">
+            <foos-auth-create-user *ngIf="create; else login"></foos-auth-create-user>
+            <ng-template #login>
+                <foos-auth-login></foos-auth-login>
+            </ng-template>
 
-            <input class="auth__button button" type="submit" value="create ? Translations.auth.createUser : Translations.auth.login" />
+            <button mat-flat-button color="accent" class="mat_full-width mat_spacing-bottom">
+                {{ create ? translations.createUser : translations.login }}
+            </button>
 
-            <button type="button" class="button button_link" (click)="this.toggleCreate()">
-                <span *ngSwitchCase="true">${Translations.auth.login}</span>
-                <span *ngSwitchCase="false">${Translations.auth.createUser}</span>
+            <button mat-stroked-button type="button" (click)="this.toggleCreate()">
+                {{ create ? translations.login : translations.createUser }}
             </button>
         </form>
     `
 })
 export class AuthComponent {
+    translations = Translations.auth;
     create = false;
 
     toggleCreate() {

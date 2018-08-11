@@ -5,8 +5,13 @@ import { Translations } from "../../translations/translations";
     selector: "foos-auth-login",
     template: `
         <div class="auth-login">
-            <input class="auth__input input" type="email" name="email" placeholder="${Translations.auth.email}" required />
-            <input class="auth__input input" type="password" name="password" placeholder="${Translations.auth.password}" required minLength={6} />
+            <mat-form-field class="mat_full-width mat_spacing-bottom">
+                <input matInput type="email" name="email" placeholder="${Translations.auth.email}" required />
+            </mat-form-field>
+
+            <mat-form-field class="mat_full-width mat_spacing-bottom">
+                <input matInput type="password" name="password" placeholder="${Translations.auth.password}" required minlength="6" />
+            </mat-form-field>
         </div>
     `
 })
