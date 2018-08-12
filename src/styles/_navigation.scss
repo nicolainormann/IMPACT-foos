@@ -10,47 +10,16 @@
 
     &__top {
         flex: 1;
-        background-color: lighten($alt-color, 10%);
-    }
-
-    &__bottom {
-        background-color: $alt-color;
+        background-color: lighten($primary-color, 10%);
     }
 
     &__link {
-        --display-text: none;
         --text-color: #{$alt-text-color};
-        --svg-size: 35px;
-        --padding: #{$spacing-small};
+        color: var(--text-color);
 
-        @include respond-to(tablet, desktop) {
-            --display-text: block;
-            --svg-size: 25px;
-            --padding: #{$spacing-medium};
-        }
-
-        &:hover,
         &_active {
-            --text-color: #{$primary-color};
-            --background-color: #{lighten($alt-color, 5%)};
-        }
-
-        display: flex;
-        align-items: center;
-        padding: var(--padding);
-        background-color: var(--background-color);
-        width: 100%;
-
-        svg {
-            width: var(--svg-size);
-            height: var(--svg-size);
-            fill: var(--text-color);
-        }
-
-        &-text {
-            display: var(--display-text);
-            color: var(--text-color);
-            margin-left: $spacing-medium;
+            --text-color: #{$alt-color};
+            background-color: lighten($primary-color, 5%);
         }
     }
 }

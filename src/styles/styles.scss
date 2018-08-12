@@ -21,10 +21,11 @@
 
 body {
     margin: 0;
-    color: $alt-color;
+    color: $primary-color;
 }
 
 a {
+    @include no-outline;
     text-decoration: none;
     color: inherit;
 }

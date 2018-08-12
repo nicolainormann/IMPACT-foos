@@ -4,7 +4,7 @@
     &__player {
         width: 200px;
         margin: $spacing-medium auto;
-        border: 3px solid lighten($alt-color, 10%);
+        border: 3px solid lighten($primary-color, 10%);
 
         &-image {
             padding: 25px;
@@ -14,6 +14,6 @@
     &__select {
         width: 100%;
         border: none;
-        border-top: 3px solid lighten($alt-color, 10%);
+        border-top: 3px solid lighten($primary-color, 10%);
     }
 }

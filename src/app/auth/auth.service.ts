@@ -9,4 +9,16 @@ export class AuthService {
     user$: Observable<firebase.User | null> = this.fireAuth.authState;
 
     constructor(private fireAuth: AngularFireAuth) { }
+
+    login(email: string, password: string) {
+        return this.fireAuth.auth.signInWithEmailAndPassword(email, password);
+    }
+
+    logout() {
+        return this.fireAuth.auth.signOut();
+    }
+
+    createUser(email: string, password: string) {
+        return this.fireAuth.auth.createUserWithEmailAndPassword(email, password);
+    }
 }

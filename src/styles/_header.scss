@@ -4,7 +4,7 @@
     left: 0;
     width: 100%;
     z-index: 1;
-    background-color: $alt-color;
+    background-color: $primary-color;
     color: $alt-text-color;
     padding: $spacing-medium 0;
     display: grid;
@@ -14,7 +14,7 @@
     &__logo {
         --color: #{$alt-text-color};
         &:hover {
-            --color: #{$primary-color};
+            --color: #{$alt-color};
         }
 
         grid-area: logo;

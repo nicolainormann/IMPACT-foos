@@ -14,16 +14,16 @@ $foos-app-typography: mat-typography-config( $font-family: '#{$font}');
 $foos-primary: ( 100: lighten($primary-color, 10%),
 500: $primary-color,
 700: darken($primary-color, 10%),
-contrast: ( 100: $text-color,
-500: $text-color,
-700: $text-color,
+contrast: ( 100: $alt-text-color,
+500: $alt-text-color,
+700: $alt-text-color,
 ));
 $foos-accent: ( 100: lighten($alt-color, 10%),
 500: $alt-color,
 700: darken($alt-color, 10%),
-contrast: ( 100: $alt-text-color,
-500: $alt-text-color,
-700: $alt-text-color,
+contrast: ( 100: $text-color,
+500: $text-color,
+700: $text-color,
 ));
 $foos-warn: ( 100: lighten($error-color, 10%),
 500: $error-color,
@@ -67,5 +67,20 @@ $foos-app-theme: mat-light-theme($foos-app-primary, $foos-app-accent, $foos-app-
 
     .mat-button-wrapper {
         box-sizing: content-box;
+    }
+
+    &.mat_icon-button {
+        svg {
+            width: 25px;
+            height: 25px;
+            fill: currentColor;
+            margin-right: $spacing-medium;
+        }
+
+        .mat-button-wrapper {
+            display: flex;
+            align-items: center;
+            text-align: left;
+        }
     }
 }

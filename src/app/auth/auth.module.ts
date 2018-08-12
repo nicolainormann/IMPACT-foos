@@ -6,6 +6,7 @@ import { AuthComponent } from "./auth.component";
 import { AuthProfileComponent } from "./auth-profile.component";
 import { AuthProfileImageComponent } from "./auth-profile-image.component";
 import { MaterialModule } from "../material/material.module";
+import { AuthService } from "./auth.service";
 
 @NgModule({
     imports: [
@@ -22,6 +23,9 @@ import { MaterialModule } from "../material/material.module";
     exports: [
         AuthComponent,
         AuthProfileComponent
+    ],
+    providers: [
+        AuthService
     ]
 })
 export class AuthModule { }

@@ -7,23 +7,19 @@ import { plus, leaderboard, logout } from "../../assets/svg/svg";
     template: `
         <nav class="navigation">
             <div class="navigation__top">
-                <a class="navigation__link" routerLinkActive="navigation__link_active" routerLink="${Translations.routes.addMatch.path}" [routerLinkActiveOptions]="{ exact: true }">
+                <a mat-button class="navigation__link mat_full-width mat_icon-button" routerLinkActive="navigation__link_active" routerLink="${Translations.routes.addMatch.path}" [routerLinkActiveOptions]="{ exact: true }">
                     ${plus}
-                    <div class="navigation__link-text">
-                        ${Translations.routes.addMatch.title}
-                    </div>
+                    ${Translations.routes.addMatch.title}
                 </a>
 
-                <a class="navigation__link" routerLinkActive="navigation__link_active" routerLink="${Translations.routes.standing.path}">
+                <a mat-button class="navigation__link mat_full-width mat_icon-button" routerLinkActive="navigation__link_active" routerLink="${Translations.routes.standing.path}">
                     ${leaderboard}
-                    <div class="navigation__link-text">
-                        ${Translations.routes.standing.title}
-                    </div>
+                    ${Translations.routes.standing.title}
                 </a>
             </div>
 
             <div class="navigation__bottom">
-                <!-- <a class="navigation__link" routerLinkActive="navigation__link_active" routerLink="${Translations.routes.profile.path}">
+                <!-- <a routerLinkActive="mat_active" routerLink="${Translations.routes.profile.path}">
                     <div class="navigation__link-image">
                     </div>
 
@@ -31,11 +27,9 @@ import { plus, leaderboard, logout } from "../../assets/svg/svg";
                     </div>
                 </a>-->
 
-                <button class="navigation__link navigation__link_bottom">
+                <button mat-flat-button class="mat_full-width mat_icon-button">
                     ${logout}
-                    <div class="navigation__link-text">
-                        ${Translations.routes.logout.title}
-                    </div>
+                    ${Translations.routes.logout.title}
                 </button>
             </div>
         </nav>
